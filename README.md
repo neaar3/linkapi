@@ -1,9 +1,9 @@
 # LinkApi Pipedrive + Bling
 
-Este projeto é um teste para realizar a integração entre duas APIs, sendo uma do Pipedrive e a outro do Bling. A integração deve buscar oportunidades no Pipedrive com status de ganho, recuperar as informações e inseri-las como pedidos no Bling. Além de inserir as informações em outra API, é necessário salva-las em um banco de dados MongoDB, agregando as oportunidades por dia e valor total. Deve haver um endpoint para consulta dos dados da collection.
+Este projeto é um teste para realizar a integração entre duas APIs, sendo uma do Pipedrive e a outro do Bling. A integração deve buscar oportunidades no Pipedrive com status de ganho, recuperar as informações e inseri-las como pedidos no Bling. Além de inserir as informações em outra API, é necessário salva-las em um banco de dados MongoDB.
 
 ## Sobre
-A aplicação é uma Api REST desenvolvida para o desefio da LinkApi que tem como objetivo a integração entre o Pipedrive e o Bling, que é um sistema de gestão(ERP) para a micro e pequena empresa.
+A aplicação é uma Api REST desenvolvida para o desafio da LinkApi que tem como objetivo a integração entre o Pipedrive e o Bling.
 O desafio contém os seguintes requisitos:
   - Criar contas testes nas plataformas Pipedrive e Bling.
 
