@@ -71,13 +71,13 @@ como a aplicação estará executando em ambiente local, utilize o endereço ``h
 A aplicação possie uma única.
 - orders
 Aceita requisiçõe do tipo GET e do tipo POST
-  - ``GET``/pipedrive/deals/
+  - ``GET /pipedrive/deals/``
   Lista todos os negócios disponiveis no Pipedrive com status "won".
-  - ``POST``/bling/orders
+  - ``POST/bling/orders``
   Salva a lista de oportunidades do Pipedrive no Bling como pedido.
-  - ``POST``/deals
+  - ``POST/deals``
   Salva no banco de dados os negocios disponiveis no Pipedrive com status "won".
-  - ``POST``/
+  - ``POST/``
   Busca no Pipedrive todas as oportunidades com o status "won" e as insere no Bling como pedido.
   Também salva no banco as oportunidades inseridas no Bling.
 
