@@ -1,21 +1,35 @@
-import { request, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import { Deal } from '../models/database'
 import getSuccessfulDeals from './pipedrive';
 
 export async function saveDealsInDatabase() {
     try {
         let successfulDeals = await getSuccessfulDeals();
-
         for (let deal of successfulDeals) {
             const dealDate = new Date(deal.update_time);
             const dealExists = await Deal.find({ update_time: dealDate });
 
             if(dealExists.length === 0) {
-                await new Deal(deal).save();
+                await new Deal(deal).save()
             }
         }
-
+        let aggregate = await Deal.aggregate([
+            {
+                $group: {
+                    _id: {
+                        date: {
+                            $dateToString: {
+                                date: '$date'
+                            }
+                        }
+                    },
+                    totalValue: { $sum: '$value' },
+                    deals: { $push: '$$ROOT' }
+                },
+            }, { $sort: { _id: 1 } }
+        ])
         return successfulDeals;
+
     } catch (err) {
         throw new Error(err);
     }

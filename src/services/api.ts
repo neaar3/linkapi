@@ -27,7 +27,7 @@ export async function api(method: Method | undefined, url: string, params: Param
 export async function apiBling() {
     const options = {
         method: 'GET' as Method | undefined,
-        url: 'https://bling.com.br/Api/v2/produtos/json/',
+        url: 'https://bling.com.br/Api/v2/pedidos/json/',
         params: {
             apikey: process.env.BLING_API_KEY
         }

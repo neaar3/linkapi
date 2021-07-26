@@ -7,7 +7,7 @@ const routes = Router();
 
 routes.get("/pipedrive/deals", getDeals)
 routes.post("/deals", saveDealsInDb)
-routes.post("/bling/products", postDealsToBling)
+routes.post("/bling/orders", postDealsToBling)
 routes.post("/", getAndPostDeals)
 
 

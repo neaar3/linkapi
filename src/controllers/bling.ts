@@ -22,7 +22,10 @@ export async function postDealsToBling (_req: Request, res: Response) {
                         nome: deal.person_name
                     },
                     item: {
+                        codigo: '001',
+                        descricao: deal.title,
                         qtde: 1,
+                        un: 'un',
                         vlr_unit: deal.value,
                     }
                 }
@@ -37,11 +40,11 @@ export async function postDealsToBling (_req: Request, res: Response) {
                     return product.produto.descricao === deals[index].title;
                 })
                 if(productRegistered.length === 0) {
-                    api("POST", "https://bling.com.br/Api/v2/produto/json/", { apikey: process.env.BLING_API_KEY as string, xml: deal })
+                    api("POST", "https://bling.com.br/Api/v2/pedido/json/", { apikey: process.env.BLING_API_KEY as string, xml: deal })
                 }
                 index++;
             } else {
-                api("POST", "https://bling.com.br/Api/v2/produto/json/", { apikey: process.env.BLING_API_KEY as string, xml: deal })
+                api("POST", "https://bling.com.br/Api/v2/pedido/json/", { apikey: process.env.BLING_API_KEY as string, xml: deal })
             }
         }
         return res.status(200).json({ message: "New products were successfully saved" })
