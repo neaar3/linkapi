@@ -1,8 +1,8 @@
-# LinkApi Pipedrive + Bling
+# LinkApi - Pipedrive && Bling
 
 Este projeto é um teste para realizar a integração entre duas APIs, sendo uma do Pipedrive e a outro do Bling. A integração deve buscar oportunidades no Pipedrive com status de ganho, recuperar as informações e inseri-las como pedidos no Bling. Além de inserir as informações em outra API, é necessário salva-las em um banco de dados MongoDB.
 
-## Sobre
+## ⚡ Sobre
 A aplicação é uma Api REST desenvolvida para o desafio da LinkApi que tem como objetivo a integração entre o Pipedrive e o Bling.
 O desafio contém os seguintes requisitos:
   - Criar contas testes nas plataformas Pipedrive e Bling.
@@ -15,7 +15,7 @@ O desafio contém os seguintes requisitos:
 
   - Criar endpoint para trazer os dados consolidados da collection do MongoDB.
 
-## Techs
+## ⚡ Techs
 Esse projeto foi desenvolvido utilizando as seguintes tecnologias e ferramentas:
 
 - Typescript
@@ -41,15 +41,15 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias e ferramentas:
 
 3. Adicione as chaves de acesso no ``.env``:
 
-    Para que se conectar a aplicação com a Api do Pipedrive, Bling e com o Mongodb, é necessário que você adicione as keys de acesso no ``.env`` que você criou.
+    Para que se conectar a aplicação com a Api do Pipedrive, Bling e com o Mongodb, é necessário que você adicione as keys de acesso no arquivo ``.env``.
 
 
-  No fim, o seu .env deve ser pareceido com isso: 
+  No fim, o seu .env deve ser parecido com isso: 
   ```ts
-    PORT=
-    DATABASE_NAME=
-    PIPEDRIVE_API_KEY=
-    BLING_API_KEY=
+    PORT=8080
+    DATABASE_NAME= seu database name
+    PIPEDRIVE_API_KEY= sua pipedrive api key
+    BLING_API_KEY= suabling api key
   ```
 4. Instale as depedências:
 ```sh
@@ -57,7 +57,7 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias e ferramentas:
   npm ci
 ```
 
-5. Executando a Aplicação:
+5. Execute a aplicação:
 ```sh
   # Inicie a API
   npm run dev
@@ -66,11 +66,10 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias e ferramentas:
 Assim que as messagens ``Application running on http://localhost:8080`` e ``Connected to database`` aparecerem em seu terminal, você ja pode fazer suas requisições.
 ## ⚡ Rotas
 
-como a aplicação estará executando em ambiente local, utilize o endereço ``http://localhost:SUA_PORTA_ENV`` como baseUrl.
+Como a aplicação estará executando em ambiente local, utilize o endereço ``http://localhost:SUA_PORTA_ENV`` como baseUrl.
 
-A aplicação possie uma única.
-- orders
-Aceita requisiçõe do tipo GET e do tipo POST
+A aplicação possue diversos endpoints e aceita requisiçõe do tipo GET e do tipo POST, sendo elas: 
+
   - ``GET /pipedrive/deals/``
   Lista todos os negócios disponiveis no Pipedrive com status "won".
   - ``POST /bling/orders``
